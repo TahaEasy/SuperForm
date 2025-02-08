@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap");
 
 :root {
   --color-white: #fef8f8;
@@ -6,6 +6,7 @@
   --color-dark-gray: #7e7e7e;
   --color-black: #191919;
   --color-red: #ee382a;
+  --color-purple: #df0a51;
 }
 
 body {
@@ -16,18 +17,6 @@ body {
   margin: 0;
   height: 100vh;
   background-color: white;
-}
-
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-strong,
-span {
-  color: var(--color-black);
 }
 
 button {
@@ -162,31 +151,124 @@ a:hover {
   background-color: #dfdfdf;
 }
 
-.submit-button {
+.btn {
   text-transform: uppercase;
-  color: var(--color-white);
   padding: 1rem 4rem;
-  background-color: var(--color-red);
   border-radius: 16rem;
-  box-shadow: 0px 7px 13px -3px #33333300;
-  transition: all 0.25s;
+  transition: all 0.1s;
 }
-.submit-button:hover {
+.btn:hover {
+  transform: translateY(-2px);
+}
+.btn:active {
+  transform: translateY(0px);
+}
+
+.btn-primary {
+  color: var(--color-white);
+  background-color: var(--color-red);
+  box-shadow: 0px 7px 13px -3px #33333300;
+}
+.btn-primary:hover {
   transform: translateY(-2px);
   background-color: var(--color-red);
   box-shadow: 0px 7px 13px -3px #333;
+}
+.btn-primary:active {
+  transform: translateY(0px);
+  box-shadow: 0px 0px 13px -3px #333;
+}
+
+.btn-secondary {
+  color: var(--color-white);
+  border: 1px var(--color-white) solid;
+  background-color: transparent;
+}
+.btn-secondary:hover {
+  transform: translate(0);
+}
+.btn-secondary:active {
+  transform: scale(0.95);
 }
 
 .details-side {
   position: absolute;
   top: 0;
-  inset-inline-end: 0;
+  right: 0;
   height: 100%;
   width: 50%;
-  background-image: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
-  background-size: 100% 200%;
-  background-position: 0 0%;
-  /* background-position: 0 100%; */
-  transition: all 0.5s;
+  background-image: linear-gradient(
+    237deg,
+    var(--color-purple) 0%,
+    var(--color-red) 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  will-change: right;
+  transition: all 1s ease-in-out;
   z-index: 0;
+}
+
+.details-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.detail-container {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  will-change: left;
+  transition: all 1s ease-in-out;
+}
+
+.detail-container h1 {
+  margin: 0.25rem;
+}
+
+.detail-container p {
+  margin: 2rem 0;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  max-width: 300px;
+}
+
+.first-detail {
+  left: 0%;
+}
+
+.second-detail {
+  left: -100%;
+}
+
+.detail-container {
+  color: var(--color-white);
+}
+
+/* ----------------------- changes after form toggle ----------------------- */
+
+.forms-container.toggle-form .details-side {
+  right: 50%;
+  background-position: 0% 0;
+}
+
+.forms-container.toggle-form .first-detail {
+  left: 100%;
+}
+
+.forms-container.toggle-form .second-detail {
+  left: 0%;
 }
