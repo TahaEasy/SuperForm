@@ -5,15 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SuperForm</title>
     <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <script src="./scripts.js" defer></script>
   </head>
   <body>
     <div class="forms-container">
+      <div class="details-side"></div>
       <div class="form-side">
-        <h1>Sign in, bro</h1>
+        <div class="text-center">
+          <h1>Sign in</h1>
+        </div>
+        <div class="brands-container flex-center gap-4">
+          <a href="#" class="btn-brand">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="#" class="btn-brand">
+            <i class="fa-brands fa-google"></i>
+          </a>
+          <a href="#" class="btn-brand">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+        <p class="text-center">Or use your account</p>
+        <div class="inputs-container">
+          <div class="input-container">
+            <input type="email" class="input" placeholder="Email" />
+          </div>
+          <div class="input-container">
+            <input type="password" class="input" placeholder="Password" />
+          </div>
+        </div>
+        <div class="flex-center my-4">
+          <a href="#">Forgot your passowrd?</a>
+        </div>
+        <div class="flex-center my-4">
+          <button class="submit-button">Sign in</button>
+        </div>
       </div>
       <div class="form-side">
-        <h1>Sign Up Form</h1>
+        <div class="flex-center">
+          <h1>Sign up</h1>
+        </div>
       </div>
     </div>
   </body>
